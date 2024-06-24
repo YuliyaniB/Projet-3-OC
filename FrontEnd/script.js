@@ -104,9 +104,9 @@ async function filterCategories() {
 //pour eviter les fetch api a chaque debut de fonction.
 // Appeler l'API le moins possible
 
-displayWorks()
+displayWorks();
 displayCategories();
-filterCategories()
+filterCategories();
 
 /*
 function loggedElements() {
@@ -134,3 +134,37 @@ function logout() {
 }
 logout()
 */
+
+
+// Affichage de la page admin lorsque le user est connecté
+function logged() {
+    const user = window.sessionStorage.getItem("Token");
+    const logout = document.getElementById("login-li");
+    const filter = document.getElementById("filter-container");
+    const edit = document.getElementById("edition-mode");
+    const modify = document.getElementById("modify-gallery");
+    if (user) {
+        logout.textContent= "logout";
+        filter.style.display = "none";
+    } else {
+        edit.style.display = "none";
+        modify.style.display = "none";
+    }
+}
+logged()
+
+// Suppresion du token lors du click sur Logout et deconnexion
+function logout() {
+    const logout = document.getElementById("login-li")
+    const user = window.sessionStorage.getItem("Token");
+    logout.addEventListener("click", () => {
+        if (user) {
+            window.sessionStorage.setItem("Token", "");
+            logout.textContent = "login";
+            window.location.replace("index.html");
+        } else {
+            window.location.replace("login.html");
+        }
+    })
+}
+logout();
