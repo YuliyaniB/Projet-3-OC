@@ -19,7 +19,7 @@
 </head>
 
 <body>
-	<header>
+	<header id="index-header">
 		<div id="edition-mode">
 			<i class="fa-regular fa-pen-to-square"></i>
 			<p>Mode édition</p>
@@ -29,16 +29,20 @@
 				<i class="fa-solid fa-xmark"></i>
 				<i class="fa-solid fa-arrow-left"></i>
 				<h3>Ajout photo</h3>
-				<form action="#" method="post" id="edit-form">
-					<label for="input-file">
-						<input type="file" accept="image/*" id="input-file">
-					</label>
-					<label for="title">Titre</label>
-					<input type="text" name="title">
-					<label for="category">Catégories</label>
-					<input type="select">
+				<form id="edit-form">
+					<div id="add-image">
+						<i class="fa-regular fa-image"></i>
+						<label for="file" id="img-btn">+ Ajouter photo</label>
+						<input type="file" id="file" name="image" accept="image/jpg, image/png" required>
+						<img id="img-form" src="#" alt="Aperçu de l'image">
+						<p>jpg, png : 4mo max</p>
+					</div>
+					<label for="form-title">Titre</label>
+					<input type="text" name="title" id="form-title" required>
+					<label for="form-category">Catégories</label>
+					<select id="form-category" required></select>
+					<input type="submit" value="Valider" id="submit-img">
 				</form>
-				<input type="submit" value="Valider">
 
 			</div>
 		</div>
@@ -50,9 +54,6 @@
 					<li>contact</li>
 					<a href="login.html">
 						<li id="login-li">login</li>
-					</a>
-					<a href="index.html" id="logout">
-						<li>logout</li>
 					</a>
 					<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 				</ul>
@@ -83,14 +84,15 @@
 					<p>modifier</p>
 				</div>
 			</div>
-			<dialog id="modify-container">
+
+			<aside id="modify-container">
 				<div id="modal-modify">
 					<i class="fa-solid fa-xmark"></i>
 					<h3>Gallerie photo</h3>
 					<div id="handle-works"></div>
 					<input type="submit" value="Ajouter une photo" id="add">
 				</div>
-			</dialog>
+			</aside>
 
 
 			<div id="filter-container">
