@@ -153,35 +153,50 @@ async function worksModal() {
 // Post works
 function postWorks() {
     const form = document.getElementById("edit-form");
+    const fileInput = document.getElementById("file");
+    const title = document.getElementById("form-title");
+    const category = document.getElementById("form-category");
+    const modal = document.getElementById("edit-container");
+    const modify = document.getElementById("modify-container")
+    const preview = document.getElementById("img-form");
     const token = window.sessionStorage.getItem("Token");
     form.addEventListener("submit", (e) => {
         e.preventDefault()
-            const myHeaders = new Headers();
-            myHeaders.append("Authorization", `Bearer ${token}`);
-            const fileInput = document.querySelector("#file");
-            const title = document.getElementById("form-title");
-            const category = document.getElementById("form-category");
-            const formdata = new FormData();
-            formdata.append("image", fileInput.files[0]);
-            formdata.append("title", title.value);
-            formdata.append("category", category.value);
-            
-            const requestOptions = {
-              method: "POST",
-              headers: myHeaders,
-              body: formdata,
-              redirect: "follow"
-            };
-            
-            fetch("http://localhost:5678/api/works", requestOptions)
-              .then((response) => response.text())
-              .then((result) => {
+        const myHeaders = new Headers();
+        myHeaders.append("Authorization", `Bearer ${token}`);
+        const formdata = new FormData();
+        formdata.append("image", fileInput.files[0]);
+        formdata.append("title", title.value);
+        formdata.append("category", category.value);
+
+        const requestOptions = {
+            method: "POST",
+            headers: myHeaders,
+            body: formdata,
+            redirect: "follow"
+        };
+
+        fetch("http://localhost:5678/api/works", requestOptions)
+            .then((response) => response.text())
+            .then((result) => {
                 console.log(result);
                 displayWorks();
                 worksModal();
+                modal.style.display = "none";
+                modify.style.display = "flex";
+                preview.style.display = "none";
+                form.reset();
+
+
             })
-              .catch((error) => console.error(error));
-        })
+            .catch((error) => console.error(error));
+    })
+}
+
+
+function validateForm() {
+    const form = document.getElementById("edit-form");
+    const title = document.getElementById("form-title");
 }
 
 
