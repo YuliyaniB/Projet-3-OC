@@ -14,8 +14,8 @@
 		crossorigin="anonymous" referrerpolicy="no-referrer">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
-	<script src="script.js" defer></script>
-	<script src="modal.js" defer></script>
+	<script src="JavaScript/script.js" defer></script>
+	<script src="JavaScript/modal.js" defer></script>
 </head>
 
 <body>
@@ -23,28 +23,6 @@
 		<div id="edition-mode">
 			<i class="fa-regular fa-pen-to-square"></i>
 			<p>Mode édition</p>
-		</div>
-		<div id="edit-container">
-			<div id="edit-modal">
-				<i class="fa-solid fa-xmark"></i>
-				<i class="fa-solid fa-arrow-left"></i>
-				<h3>Ajout photo</h3>
-				<form id="edit-form">
-					<div id="add-image">
-						<i class="fa-regular fa-image"></i>
-						<label for="file" id="img-btn">+ Ajouter photo</label>
-						<input type="file" id="file" name="image" accept="image/jpg, image/png" required>
-						<img id="img-form" src="#" alt="Aperçu de l'image">
-						<p>jpg, png : 4mo max</p>
-					</div>
-					<label for="form-title">Titre</label>
-					<input type="text" name="title" id="form-title" required>
-					<label for="form-category">Catégories</label>
-					<select id="form-category" required></select>
-					<input type="submit" value="Valider" id="submit-img">
-				</form>
-
-			</div>
 		</div>
 		<div id="initial-header">
 			<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
@@ -84,64 +62,41 @@
 					<p>modifier</p>
 				</div>
 			</div>
-
-			<aside id="modify-container">
-				<div id="modal-modify">
+			<aside id="modal-container">
+				<div id="delete-modal">
 					<i class="fa-solid fa-xmark"></i>
 					<h3>Gallerie photo</h3>
 					<div id="handle-works"></div>
 					<input type="submit" value="Ajouter une photo" id="add">
 				</div>
+				<div id="add-modal">
+					<i class="fa-solid fa-xmark"></i>
+					<i class="fa-solid fa-arrow-left"></i>
+					<h3>Ajout photo</h3>
+					<form id="edit-form">
+						<div id="add-image">
+							<i class="fa-regular fa-image"></i>
+							<label for="file" id="img-btn">+ Ajouter photo</label>
+							<input type="file" id="file" name="image" accept="image/jpeg, image/png" required>
+							<img id="img-form" src="#" alt="Aperçu de l'image">
+							<p>jpg, png : 4mo max</p>
+						</div>
+						<div class="form-input">
+							<label for="form-title">Titre</label>
+							<input type="text" name="title" id="form-title" required>
+						</div>
+						<div class="form-input">
+							<label for="form-category">Catégories</label>
+							<select id="form-category" required></select>
+						</div>
+						<hr>
+						<input type="submit" value="Valider" id="submit-img">
+					</form>
+				</div>
 			</aside>
-
-
 			<div id="filter-container">
 			</div>
 			<div class="gallery">
-				<!-- <figure>
-				<img src="assets/images/abajour-tahina.png" alt="Abajour Tahina">
-				<figcaption>Abajour Tahina</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-v.png" alt="Appartement Paris V">
-				<figcaption>Appartement Paris V</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/restaurant-sushisen-londres.png" alt="Restaurant Sushisen - Londres">
-				<figcaption>Restaurant Sushisen - Londres</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/la-balisiere.png" alt="Villa “La Balisiere” - Port Louis">
-				<figcaption>Villa “La Balisiere” - Port Louis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/structures-thermopolis.png" alt="Structures Thermopolis">
-				<figcaption>Structures Thermopolis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-x.png" alt="Appartement Paris X">
-				<figcaption>Appartement Paris X</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/le-coteau-cassis.png" alt="Pavillon “Le coteau” - Cassis">
-				<figcaption>Pavillon “Le coteau” - Cassis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/villa-ferneze.png" alt="Villa Ferneze - Isola d’Elba">
-				<figcaption>Villa Ferneze - Isola d’Elba</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-xviii.png" alt="Appartement Paris XVIII">
-				<figcaption>Appartement Paris XVIII</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/bar-lullaby-paris.png" alt="Bar “Lullaby” - Paris">
-				<figcaption>Bar “Lullaby” - Paris</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/hotel-first-arte-new-delhi.png" alt="Hotel First Arte - New Delhi">
-				<figcaption>Hotel First Arte - New Delhi</figcaption>
-			</figure> -->
 			</div>
 		</section>
 		<section id="contact">
@@ -154,11 +109,10 @@
 				<input type="email" name="email" id="email">
 				<label for="message">Message</label>
 				<textarea name="message" id="message" cols="30" rows="10"></textarea>
-				<input type="submit" value="Envoyer">
+				<input id="contact-submit" type="submit" value="Envoyer">
 			</form>
 		</section>
 	</main>
-
 	<footer>
 		<nav>
 			<ul>
@@ -169,3 +123,42 @@
 </body>
 
 </html>
+
+
+
+<!--
+<aside id="modal-container">
+	<div id="modify-container">
+		<div id="modal-modify">
+			<i class="fa-solid fa-xmark"></i>
+			<h3>Gallerie photo</h3>
+			<div id="handle-works"></div>
+			<input type="submit" value="Ajouter une photo" id="add">
+		</div>
+	</div>
+	<div id="edit-container">
+		<div id="edit-modal">
+			<i class="fa-solid fa-xmark"></i>
+			<i class="fa-solid fa-arrow-left"></i>
+			<h3>Ajout photo</h3>
+			<form id="edit-form">
+				<div id="add-image">
+					<i class="fa-regular fa-image"></i>
+					<label for="file" id="img-btn">+ Ajouter photo</label>
+					<input type="file" id="file" name="image" accept="image/jpeg, image/png" required>
+					<img id="img-form" src="#" alt="Aperçu de l'image">
+					<p>jpg, png : 4mo max</p>
+				</div>
+				<div class="form-input">
+					<label for="form-title">Titre</label>
+					<input type="text" name="title" id="form-title" required>
+				</div>
+				<div class="form-input">
+					<label for="form-category">Catégories</label>
+					<select id="form-category" required></select>
+				</div>
+				<input type="submit" value="Valider" id="submit-img">
+			</form>
+		</div>
+	</div>
+</aside>-->
