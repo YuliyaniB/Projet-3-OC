@@ -7,8 +7,7 @@ function setUpModal() {
     const deleteWorks = document.getElementById("delete-modal");
     const firstXmark = document.querySelector("#delete-modal .fa-xmark");
     const addButton = document.getElementById("add");
-    const addWorks = document.getElementById("add-modal");
-    
+    const addWorks = document.getElementById("add-modal");    
     // Affichage modale au click sur Modifier
     modifyButton.addEventListener("click", () => {
         modal.style.display = "flex";
@@ -124,7 +123,6 @@ function setUpSecondModal() {
         img.style.display = "none";
         form.reset();
     });
-
 }
 
 // Previsualisation de l'image dans la deuxieme modale
@@ -229,94 +227,3 @@ function mainModalFunction() {
     validateForm();
 }
 mainModalFunction();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

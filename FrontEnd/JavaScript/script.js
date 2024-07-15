@@ -61,7 +61,6 @@ async function displayCategories() {
         filters.appendChild(filtresElement);
     });
 }
-// creer une class selected/clicked pour le bouton tous
 
 // Filtrer dynamiquement au click
 async function filterCategories() {
@@ -126,8 +125,3 @@ function mainFunction() {
     logout();
 }
 mainFunction();
-
-
-
-
-
