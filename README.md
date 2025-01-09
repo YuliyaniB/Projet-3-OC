@@ -2,7 +2,7 @@
 
 Ce projet consiste à développer le portfolio de Sophie Bluel, une architecte d'intérieur, dans le cadre de la formation OpenClassrooms "Développeur Web". L'objectif est d'intégrer des maquettes avec JavaScript pour rendre le site interactif et connecté à une API.
 
-## 📖 Objectifs pédagogiques
+### 📖 Objectifs pédagogiques
 - Manipuler le DOM avec JavaScript pour créer des interactions dynamiques.
 - Consommer une API REST en utilisant des requêtes asynchrones (fetch).
 - Implémenter un système de gestion d’utilisateurs (authentification et tokens).
